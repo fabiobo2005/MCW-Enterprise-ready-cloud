@@ -720,7 +720,7 @@ In this task, you will create two user accounts in Azure AD that you will use fo
 
     ```s
     az ad user create --display-name "Electronics Admin" --password "demo@pass123" --user-principal-name "ElectronicsAdmin@$aadDomain"
-    $memberId = (az ad user show --upn-or-object-id "ElectronicsAdmin@$aadDomain" --query objectId -o tsv)
+    $memberId = (az ad user show --id "ElectronicsAdmin@$aadDomain" --query objectId -o tsv)
     az ad group member add --group "BU-Electronics-Admins" --member-id $memberId
     ```
 
